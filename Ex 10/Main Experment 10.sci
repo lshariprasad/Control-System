@@ -1,0 +1,14 @@
+//Root locus 
+clear; 
+clc; 
+(winsid()); 
+//cd"your directory" 
+cd"D:\Control System\Lab"
+exec("root1.sci"); 
+s=%s; 
+G=syslin('c',1,s*(s+1)*(s^2+4*s+13)); 
+disp(G, 'The given transfer function G(s)='); 
+root1(G,[-6 -5;6 5],'Root locus plot for the given transfer function G(s)=1/s(s+1)(s^2+4s+13)'); 
+//simply write the transfer function and choose 
+//suitable range [xmin ymin:xmax ymax]
+
