@@ -1,0 +1,15 @@
+clc; 
+clear; 
+close; 
+A=[0 1;-25 -4]; 
+B=[1 1;0 1]; 
+C=[1 0;0 1]; 
+D=[0 0;0 0]; 
+H=syslin('c',A,B,C,D); 
+disp(H,'The given state model matrices are'); 
+disp(A,'A='); 
+disp(B,'B='); 
+disp(C,'C='); 
+disp(D,'D='); 
+G=clean(ss2tf(H)); 
+disp(G,'The obtained transfer functions are');
