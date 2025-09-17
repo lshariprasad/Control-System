@@ -1,0 +1,14 @@
+clear; 
+clc; 
+clf(); 
+s=%s; 
+num=1; 
+den=s*(s+2)*(s+5); 
+G=syslin('c',num,den); 
+disp(G,'The given transfer function G(s)='); 
+omega=logspace(-2,3,800); 
+repf=repfreq(G,omega/(2*%pi)); 
+plot(real(repf),imag(repf)); 
+xlabel("Re(G(jω))"); 
+ylabel("Im(G(jω))"); 
+xtitle("Nyquist plot for G(s)=1/[s(s+2)(s+5)]");

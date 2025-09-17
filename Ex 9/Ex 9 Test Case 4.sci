@@ -1,0 +1,14 @@
+clear; 
+clc; 
+clf(); 
+s=%s; 
+num=20*s^2; 
+den=(s+2)*(s+10); 
+G=syslin('c',num,den); 
+disp(G,'The given open-loop transfer function G(s)H(s)='); 
+omega=logspace(-2,3,800); 
+repf=repfreq(G,omega/(2*%pi)); 
+plot(real(repf),imag(repf)); 
+xlabel("Re(GH(jω))"); 
+ylabel("Im(GH(jω))"); 
+xtitle("Nyquist plot for G(s)H(s)=20s^2/[(s+2)(s+10)]");
